@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /* background-color: #1f2229; */
+  background: rgb(31, 34, 41);
+  /* background: linear-gradient(
+    180deg,
+    rgba(31, 34, 41, 1) 21%,
+    rgba(115, 119, 126, 1) 61%,
+    rgba(226, 212, 193, 1) 88%
+  ); */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 3.5rem;
+  align-items: center;
+  background-color: #242a37;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar__left {
+  /* background-color: red; */
+  flex: 0.5;
+}
+
+.navbar__right {
+  /* background-color: green; */
+  flex: 0.5;
+  text-align-last: right;
+}
+
+.navbar__left__logo {
+  height: 3rem;
+  object-fit: contain;
+}
+
+.navbar__right__calltoaction {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.navbar__right__calltoaction > button {
+  margin-right: 0.5rem;
+  transition: 0.5s all;
+  border: none;
+  height: 2rem;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.navbar__right__calltoaction > button:hover {
+  background-color: #2f3438;
+  transform: scale(1.2);
+}
+
+main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 50px;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  width: 15rem;
+  height: 20rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: default;
+  position: relative;
+  color: #f0f0f0;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+}
+.card h2 {
+  position: absolute;
+  inset: auto auto 30px 30px;
+  margin: 0;
+  transition: inset 0.3s 0.3s ease-out;
+  font-weight: 50;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black;
+}
+.card p,
+.card a {
+  position: absolute;
+  opacity: 0;
+  max-width: 80%;
+  transition: opacity 0.3s ease-out;
+}
+.card p {
+  inset: auto auto 80px 30px;
   color: white;
+  text-shadow: 1px 1px 1px black;
+}
+.card a {
+  inset: auto auto 40px 30px;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover h2 {
+  inset: auto auto 220px 30px;
+  transition: inset 0.3s ease-out;
+}
+.card:hover p,
+.card:hover a {
+  opacity: 1;
+  transition: opacity 0.5s 0.1s ease-in;
+}
+.card:hover img {
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.material-symbols-outlined {
+  vertical-align: middle;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button__getItem {
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #242a37;
+  color: white;
+  transition: 0.5s all;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.button__getItem:hover {
+  background-color: green;
+  color: black;
+  transform: scale(1.2);
 }
